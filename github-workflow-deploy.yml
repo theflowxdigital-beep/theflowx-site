@@ -1,3 +1,5 @@
+# Save this file as .github/workflows/deploy.yml after setting up repository secrets
+
 name: Deploy to GoDaddy Hosting
 
 on:
