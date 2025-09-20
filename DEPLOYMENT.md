@@ -1,14 +1,37 @@
-# theFlowX.com Deployment Guide
+# theFlowX.com AIDevOps Pipeline
 
-This document explains how to deploy changes from GitHub to the live website at theflowx.com.
+This document explains the complete testing and deployment workflow for theFlowX.com.
 
-## 🏗️ Deployment Architecture
+## 🏗️ AIDevOps Architecture
 
 - **Repository**: `theflowxdigital-beep/theflowx-site` on GitHub
-- **Live Site**: `theflowx.com` (GoDaddy hosting)
+- **Live Site**: `theflowx.com` (GoDaddy hosting)  
 - **DNS**: `184.168.97.124` via GoDaddy nameservers
+- **Pipeline**: Local Testing → Staging → Manual Approval → Production
 
-## 🚀 Automatic Deployment (GitHub Actions)
+## 🧪 Local Development & Testing
+
+### Start Local Development Server:
+```bash
+./dev.sh
+```
+This will:
+- Run all tests automatically
+- Start server at http://localhost:3000
+- Validate HTML, CSS, and JS files
+- Only start if all tests pass
+
+### Manual Testing Commands:
+```bash
+cp theflowx-package.json package.json
+npm run test          # Run all tests
+npm run test:html      # Test HTML files
+npm run test:css       # Test CSS files  
+npm run test:js        # Test JavaScript files
+npm run build          # Build for production
+```
+
+## 🎭 Staging & Testing Pipeline
 
 ### Setup Required:
 1. Go to your GitHub repository settings
