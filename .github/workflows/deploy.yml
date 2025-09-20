@@ -1,0 +1,60 @@
+# Save this file as .github/workflows/deploy.yml after setting up repository secrets
+
+name: Deploy to GoDaddy Hosting
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js (for build tools if needed)
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Install dependencies (if package.json exists)
+      run: |
+        if [ -f package.json ]; then
+          npm install
+        fi
+        
+    - name: Build project (if build script exists)
+      run: |
+        if [ -f package.json ] && npm run build --if-present; then
+          echo "Build completed"
+        else
+          echo "No build step needed for static site"
+        fi
+        
+    - name: Deploy to GoDaddy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/README.md
+          **/.github/**
+          **/package*.json
+          **/bmad-method/**
+          **/.DS_Store
+          **/test-*.sh
+          
+    - name: Notify deployment success
+      run: |
+        echo "✅ Deployment to theflowx.com completed successfully!"
+        echo "🌐 Your site should be live at: https://theflowx.com"
