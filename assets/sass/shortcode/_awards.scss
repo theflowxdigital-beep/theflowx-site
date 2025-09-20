@@ -1,0 +1,81 @@
+/*--------------------------------------------------------------
+  27. Awards
+----------------------------------------------------------------*/
+
+.awards-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .awards-hover-image {
+    position: absolute;
+    left: -100px;
+    img {
+      min-width: 400px;
+    }
+  }
+}
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.awards-card {
+  max-width: 1030px;
+  width: 100%;
+  padding: 12px 0px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  justify-content: space-between;
+  align-self: flex-end;
+  cursor: pointer;
+  .awards-hover {
+    display: none;
+  }
+  .awards-title {
+    transition: font-size 0.5s ease;
+  }
+  .awards-img {
+    img {
+      transition: transform 1s ease;
+      transform: rotate3d(0, 0, 0, 0deg);
+    }
+  }
+  &:hover {
+    .awards-title {
+      font-size: 24px;
+    }
+    .awards-img {
+      img {
+        transform: rotate3d(0, 1, 0, 180deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .awards-list {
+    gap: 30px;
+  }
+  .awards-card {
+    flex-direction: column;
+    max-width: 100%;
+    align-items: self-start;
+    gap: 15px;
+  }
+  .awards-box {
+    position: relative;
+    .awards-hover-image {
+      display: none;
+      position: absolute;
+      left: -10%;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}

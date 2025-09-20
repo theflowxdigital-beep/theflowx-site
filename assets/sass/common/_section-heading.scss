@@ -1,0 +1,365 @@
+/*--------------------------------------------------------------
+11. Section Heading Title
+----------------------------------------------------------------*/
+.ak-section-heading {
+  &.ak-style-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    &.bg-black {
+      .ak-section-left {
+        .ak-section-title {
+          color: $white;
+        }
+      }
+      .ak-section-right {
+        .ak-section-desp {
+          color: $darktextcolor;
+        }
+        .ak-section-caption {
+          color: $white;
+        }
+      }
+    }
+
+    .ak-section-left {
+      flex: 1 1 auto;
+      .ak-section-title {
+        font-size: 55px;
+        font-weight: 700;
+        color: var(--heading-color);
+        line-height: 110%;
+        &.mini-section-title {
+          font-size: 28px;
+          font-weight: 600;
+        }
+        .highlight {
+          font-weight: 400;
+          font-style: italic;
+          color: $primary;
+          display: inline-block !important;
+          font-family: var(--secondary-font-family);
+          &.text-underline {
+            &::after {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 1px;
+              background-color: $primary;
+              margin-top: 4px;
+              opacity: 0;
+              transition-delay: 1.5s;
+              transition-duration: 0.5s;
+            }
+            &.active::after {
+              opacity: 1;
+            }
+          }
+          &.text-underline-white {
+            &::after {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 1px;
+              background-color: $white;
+              margin-bottom: 4px;
+              opacity: 0;
+              transition-delay: 1.5s;
+              transition-duration: 0.5s;
+            }
+            &.active::after {
+              opacity: 1;
+            }
+          }
+          &.text-underline-black {
+            &::after {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 1px;
+              background-color: $black;
+              margin-bottom: 4px;
+              opacity: 0;
+              transition-delay: 1.5s;
+              transition-duration: 0.5s;
+            }
+            &.active::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .ak-section-right {
+      flex: 1 1 auto;
+      max-width: 600px;
+      width: 100%;
+      .ak-section-desp {
+        font-size: 18px;
+        font-style: italic;
+        line-height: 165%;
+        margin-bottom: 20px;
+      }
+      .ak-section-caption {
+        font-size: 16px;
+        color: var(--heading-color);
+        display: flex;
+        gap: 20px;
+        flex-shrink: 0;
+        line-height: 165%;
+      }
+      .ak-section-caption:first-child {
+        padding-bottom: 15px;
+      }
+    }
+    &.type-2 {
+      .ak-section-right {
+        .ak-section-caption {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb-area {
+  &.style-2 {
+    position: relative;
+    max-width: 1720px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .breadcrumb-stroke {
+      text-transform: uppercase;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      color: transparent;
+      font-family: var(--heading-font-family);
+      background-image: none;
+      text-shadow: -1px -1px 0 var(--border-color),
+        0px -1px 0 var(--border-color), 1px -1px 0 var(--border-color),
+        1px 0px 0 var(--border-color), 1px 1px 0 var(--border-color),
+        0px 1px 0 var(--border-color), -1px 1px 0 var(--border-color),
+        -1px 0 0 var(--border-color);
+      color: var(--white-color);
+      font-size: clamp(100px, 8vw, 150px);
+      line-height: normal;
+      font-weight: 700;
+      z-index: 11;
+      &.text-normal {
+        font-size: 130px;
+        line-height: normal;
+        color: var(--border-color);
+        text-transform: uppercase;
+      }
+    }
+  }
+  .breadcrumb-wapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: flex-end;
+
+    &.style-2 {
+      justify-content: space-between;
+      .breadcrumb-title-box {
+        max-width: 100%;
+        position: relative;
+      }
+    }
+    .breadcrumb-title-box {
+      max-width: 831px;
+      width: 100%;
+      flex: 1 2 100%;
+
+      .breadcrumb-title {
+        font-size: clamp(42px, 5vw, 80px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        position: relative;
+        z-index: 12;
+        max-width: 1050px;
+        width: 100%;
+      }
+      .breadcrumb-caption {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        a {
+          font-size: 16px;
+          transition: color 0.3s ease-in-out;
+          span {
+            font-size: 16px;
+          }
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .breadcrumb-img-box {
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      flex: 1 2 100%;
+      video {
+        width: 100%;
+        height: 100%;
+        border-radius: 1000px;
+      }
+      .breadcrumb-cricle {
+        position: absolute;
+        bottom: -50px;
+        left: -50px;
+      }
+    }
+  }
+}
+
+.cricle-animated-text {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  z-index: 13;
+  border-radius: 50%;
+  padding: 15px;
+  background-color: var(--white-color);
+  &::before {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-color: var(--gray-bg);
+    z-index: 1;
+    border-radius: 50%;
+  }
+
+  .cricle-ceneter-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    flex-shrink: 0;
+    background-color: var(--white-color);
+    border-radius: 50%;
+  }
+
+  .rotating {
+    animation: rotating 12s linear infinite;
+    font-weight: 600;
+    border-radius: 50%;
+    background-color: var(--gray-bg);
+    padding: 18px;
+  }
+  @media (max-width: 1199px) {
+    width: 120px;
+    height: 120px;
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
+    .cricle-ceneter-text {
+      width: 45px;
+      height: 45px;
+    }
+    .rotating {
+      padding: 10px;
+    }
+  }
+  .rounded-text {
+    letter-spacing: 2px;
+    font-weight: 500;
+    z-index: -1;
+    font-size: 18px;
+    svg {
+      fill: var(--black-color);
+    }
+  }
+}
+@keyframes rotating {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .ak-section-heading.ak-style-1 {
+    flex-wrap: wrap;
+    .ak-section-right {
+      .ak-section-caption {
+        svg {
+          max-width: 180px;
+        }
+      }
+    }
+    &.type-2 {
+      .ak-section-right {
+        .ak-section-caption {
+          justify-content: flex-start;
+          svg {
+            max-width: 180px;
+          }
+        }
+      }
+    }
+  }
+
+  .breadcrumb-area {
+    .breadcrumb-wapper {
+      .breadcrumb-title-box {
+        flex: 1 2 100%;
+      }
+      .breadcrumb-img-box {
+        flex: 1 4 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .ak-section-heading.ak-style-1 {
+    .ak-section-left {
+      .ak-section-title {
+        font-size: 36px;
+      }
+    }
+  }
+
+  .breadcrumb-area {
+    .breadcrumb-wapper {
+      .breadcrumb-caption {
+        svg {
+          max-width: 150px;
+        }
+      }
+      &.style-2 {
+        align-items: flex-start;
+      }
+      flex-direction: column;
+      .breadcrumb-title-box {
+        flex: 1 1 auto;
+      }
+      .breadcrumb-img-box {
+        flex: 1 1 auto;
+        video {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,297 @@
+/*--------------------------------------------------------------
+26. Portfolio
+----------------------------------------------------------------*/
+
+.portfolio-content {
+  .portfolio-title-content {
+    font-size: 55px;
+    text-align: center;
+    margin-top: 41px;
+    .highlight {
+      &.style-2 {
+        font-size: 95px;
+        line-height: 100%;
+      }
+      color: var(--primary-color);
+      font-style: italic;
+      font-weight: 400;
+      font-family: var(--secondary-font-family);
+    }
+  }
+  .portfolio-content-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 134px;
+  }
+  .portfolio-content-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 94px;
+  }
+}
+
+.portfolio-card.style-1 {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: all 0.5s ease;
+  .portfolio-img {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .portfolio-info {
+    position: absolute;
+    left: 50px;
+    right: 30px;
+    bottom: 0px;
+    opacity: 0;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    .portfolio-subtitle {
+      display: inline-flex;
+      padding: 2px 15px 0px 15px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 50px;
+      color: $white;
+      border: 1px solid $white;
+      margin-bottom: 18px;
+    }
+    .portfolio-text {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      .portfolio-title {
+        color: $white;
+        font-size: 35px;
+        line-height: 130%;
+      }
+      .portfolio-btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        border: 1px solid $white;
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+        i {
+          transition: all 0.3s ease-in-out;
+          line-height: normal;
+          color: $white;
+        }
+      }
+      &:hover {
+        .portfolio-btn {
+          background-color: $white;
+          i {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  &:hover > .portfolio-info {
+    bottom: 50px;
+    opacity: 1;
+  }
+}
+
+.portfolio-card {
+  display: inline-block;
+  .portfolio-top-img {
+    margin-bottom: 30px;
+  }
+  .portfolio-content {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    padding: 0 15px;
+    .portfolio-title {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 150%;
+      transition: color 0.3s ease;
+    }
+    .portfolio-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 1px solid $primary;
+      transition: background-color 0.4s ease;
+      i {
+        transition: transform 0.4s;
+        line-height: normal;
+        color: $primary;
+      }
+    }
+  }
+  &:hover {
+    .portfolio-content {
+      .portfolio-title {
+        color: $primary;
+      }
+    }
+    .portfolio-btn {
+      background-color: var(--black-color);
+      border: 1px solid transparent;
+      i {
+        color: var(--white-color);
+      }
+    }
+  }
+}
+
+.portfolio-details-container {
+  max-width: 930px;
+}
+.portfolio-main-img {
+  position: relative;
+
+  .image-content {
+    max-width: 930px;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    background-color: var(--white-color);
+    .image-content-title {
+      max-width: 353px;
+      width: 100%;
+      font-size: 28px;
+      line-height: 130%;
+    }
+    .image-content-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+
+      .image-info {
+        &-title {
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 150%;
+        }
+        &-desp {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+.portfolio-details-box {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  .pd-desp {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .portfolio-card {
+    .portfolio-content {
+      flex-direction: column;
+    }
+  }
+  .portfolio-content {
+    .portfolio-title-content {
+      font-size: 34px;
+      text-align: center;
+      margin-top: 41px;
+      .highlight {
+        &.style-2 {
+          font-size: 45px;
+        }
+      }
+    }
+    .portfolio-content-top {
+      gap: 50px;
+    }
+    .portfolio-content-bottom {
+      gap: 50px;
+    }
+  }
+  .portfolio-card.style-1 {
+    height: 400px;
+    width: 100%;
+    .portfolio-info {
+      left: 15px;
+      right: 15px;
+
+      .portfolio-text.style-1 {
+        .portfolio-title {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .portfolio-main-img {
+    .td-main-img,
+    .pd-main-img {
+      height: 400px;
+      object-fit: cover;
+    }
+    flex-direction: column;
+    .image-content {
+      position: relative;
+      flex-direction: column;
+      padding: 15px;
+      bottom: 0;
+      gap: 30px;
+      .image-content-box {
+        justify-content: start;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .portfolio-content {
+    .portfolio-title-content {
+      font-size: 34px;
+      text-align: center;
+      margin-top: 41px;
+      .highlight {
+        &.style-2 {
+          font-size: 45px;
+        }
+      }
+    }
+    .portfolio-content-top {
+      flex-wrap: wrap;
+    }
+    .portfolio-content-bottom {
+      flex-wrap: wrap;
+    }
+  }
+}
+@media screen and (max-width: 575px) {
+  .portfolio-main-img {
+    .image-content {
+      .image-content-box {
+        .image-info {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

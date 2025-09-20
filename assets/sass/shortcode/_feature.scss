@@ -1,0 +1,308 @@
+/*--------------------------------------------------------------
+18. Feature Content
+----------------------------------------------------------------*/
+.dark {
+  .core-feature-card {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #410b00 0deg,
+      #641200 90deg
+    );
+
+    &.type-2 {
+      background: conic-gradient(
+        from 180deg at 50% 50%,
+        #410b00 0deg,
+        #641200 90deg
+      );
+    }
+    &.type-3 {
+      background: conic-gradient(
+        from 180deg at 50% 50%,
+        #410b00 0deg,
+        #641200 90deg
+      );
+    }
+  }
+}
+.core-features-area {
+  .core-features {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    & > * {
+      flex: 1 1 33.33%;
+    }
+    &.style2 {
+      gap: 30px;
+    }
+  }
+}
+.core-feature-card {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #f1f1f1 234deg,
+    #fff 270deg
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 23px 10px 23px;
+  max-width: 385px;
+  position: relative;
+  z-index: 111;
+  &.type-2 {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #f1f1f1 166deg,
+      #fff 227deg
+    );
+  }
+  &.type-3 {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #f1f1f1 12deg,
+      #fff 270deg
+    );
+  }
+  &.style-2 {
+    .icon {
+      i {
+        color: $white;
+      }
+    }
+    .core-feature-title {
+      color: $white;
+    }
+    .core-feature-desp {
+      color: $white;
+    }
+    .core-feature-number {
+      color: $white;
+    }
+  }
+  &.type-1 {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #410b00 0deg,
+      #641200 90deg
+    );
+  }
+  &.color-2 {
+    background: $black;
+  }
+  &.color-3 {
+    background: $primary;
+  }
+  .core-feature-title {
+    font-size: 22px;
+    margin-bottom: 5px;
+    line-height: 150%;
+  }
+  .core-feature-desp {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+  .icon {
+    margin-bottom: 26px;
+    i {
+      font-size: 60px;
+      path {
+        fill: var(--black-color);
+      }
+    }
+  }
+
+  .core-feature-number {
+    font-size: 25px;
+    font-style: italic;
+    font-family: var(--secondary-font-family);
+    margin-bottom: 10px;
+  }
+}
+
+.core-features-swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  .swiper-pagination-bullet {
+    width: 13px;
+    height: 13px;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: 2px solid $primary;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .swiper-pagination-bullet-active {
+    background: $primary;
+    border: 2px solid $primary;
+  }
+}
+
+.feature-area {
+  position: relative;
+  overflow: hidden;
+
+  .feature-area-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: background-color 1s linear;
+  }
+  .feature-wapper {
+    position: relative;
+    z-index: 2;
+    .feature-item {
+      position: relative;
+      height: 750px;
+      background-color: transparent;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 2;
+        pointer-events: none;
+        transition: background-color 0.5s linear;
+      }
+
+      &.active {
+        &::before {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+      .feature-item-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+        opacity: 0;
+      }
+
+      .feature-item-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 95px 45px 65px 50px;
+        z-index: 12;
+      }
+
+      .feature-item-number {
+        .feature-number {
+          font-style: normal;
+          line-height: normal;
+          font-size: 100px;
+          font-weight: 700;
+          font-family: var(--heading-font-family);
+          background-image: none;
+          text-shadow: -1px -1px 0 $white, 0px -1px 0 $white, 1px -1px 0 $white,
+            1px 0px 0 $white, 1px 1px 0 $white, 0px 1px 0 $white,
+            -1px 1px 0 $white, -1px 0 0 $white;
+          color: $black;
+          word-spacing: -32px;
+          opacity: 0.7;
+        }
+      }
+      &:hover {
+        .feature-info {
+          margin-bottom: 20px;
+          .feature-info-desp {
+            opacity: 1;
+          }
+        }
+      }
+      .feature-info {
+        transition: all 0.5s ease;
+        margin-bottom: -50px;
+
+        .feature-info-title {
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 130%;
+          color: $white;
+        }
+
+        .feature-info-desp {
+          font-size: 18px;
+          margin-top: 22px;
+          opacity: 0;
+          transition: all 0.5s ease;
+          color: $darktextcolor;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .core-features {
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  .feature-item {
+    height: 450px;
+  }
+  .core-feature-card {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .feature-area {
+    .feature-area-img {
+      opacity: 0;
+    }
+    .feature-wapper {
+      .feature-item {
+        height: 550px;
+        .feature-item-bg {
+          opacity: 1;
+          object-fit: cover;
+          background-repeat: no-repeat;
+        }
+        .feature-item-content {
+          padding: 60px 30px 30px 30px;
+        }
+      }
+    }
+  }
+  .core-features-area {
+    .core-features {
+      flex-direction: column;
+      gap: 50px;
+      & > * {
+        flex: 1 1 100%;
+      }
+    }
+  }
+  .core-features {
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+    & > * {
+      flex: 1 1 100%;
+    }
+  }
+  .core-feature-card {
+    max-width: 100%;
+  }
+}

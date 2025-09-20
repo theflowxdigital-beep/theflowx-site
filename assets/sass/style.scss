@@ -1,0 +1,75 @@
+/* 
+|......................................................................
+| Template Name: Cretio
+| Author: Thememarch
+| Version: 1.0
+|--------------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| TABLE OF CONTENTS:
+|--------------------------------------------------------------------------
+| 1. Basic Color Variable
+| 2. Typography
+| 3. Preloader
+| 4. Spacing
+| 5. General
+| 6. Slider
+| 7. Video Popup
+| 8. Header
+| 9. Footer
+| 10. Pagination
+| 11. Section Heading Title
+| 12. Button style
+| 13. Hero
+| 14. Service
+| 15. Moving Text
+| 16. About Content
+| 17. Counter Funfact
+| 18. Feature Content
+| 19. Testmonial
+| 20. Team
+| 21. DarkMode Theme Btn
+| 22. Blog
+| 23. Accordion
+| 24. Cta
+| 25. Pricing Calculator
+| 26. Portfolio
+| 27. Awards
+| 28. Newsletter
+| 29. News Card
+| 30. Progress Bar
+| 31. Contact Form
+| 32. Error Page
+ ................................................................*/
+
+@import "default/color_variable";
+@import "default/typography";
+@import "common/preloader";
+@import "common/spacing";
+@import "common/general";
+@import "common/slider";
+@import "common/video-modal";
+@import "common/header";
+@import "common/footer";
+@import "common/pagination";
+@import "common/section-heading";
+@import "shortcode/button";
+@import "shortcode/hero";
+@import "shortcode/service";
+@import "shortcode/moving";
+@import "shortcode/about-us";
+@import "shortcode/funfact";
+@import "shortcode/feature";
+@import "shortcode/testmonial";
+@import "shortcode/team";
+@import "shortcode/mode-toggle";
+@import "shortcode/bolg";
+@import "shortcode/accordion";
+@import "shortcode/cta";
+@import "shortcode/pricing-table";
+@import "shortcode/portfolio";
+@import "shortcode/awards";
+@import "shortcode/newsletter";
+@import "shortcode/news-card";
+@import "shortcode/progress-bar";
+@import "shortcode/contact-form";
+@import "shortcode/error-page";

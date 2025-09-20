@@ -1,0 +1,278 @@
+/*--------------------------------------------------------------
+  9. Footer
+----------------------------------------------------------------*/
+
+.ak-footer.style-1 {
+  position: relative;
+  overflow: hidden;
+  .footer-bgshape {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-position: top right;
+  }
+
+  .ak-footer-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1199px) {
+      gap: 50px;
+    }
+    gap: 155px;
+    .footer-cta {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      flex-wrap: wrap;
+      .footer-cta-info {
+        max-width: 850px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .footer-cta-title {
+          @media (min-width: 1199px) {
+            font-size: 8.2vw;
+          }
+          font-size: 120px;
+          color: $white;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        .footer-cta-title-two {
+          span {
+            color: $primary;
+            position: relative;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 100%;
+              height: 2px;
+              bottom: 13px;
+              right: 0;
+              background-color: $primary;
+            }
+          }
+          @media (min-width: 1199px) {
+            font-size: 8.3vw;
+            line-height: 163px;
+            width: 100%;
+          }
+          color: $white;
+          font-size: 100px;
+          line-height: normal;
+          font-weight: 400;
+          font-style: italic;
+          font-family: var(--secondary-font-family);
+        }
+      }
+      .footer-btn-email {
+        max-width: 371px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        @media (max-width: 1199px) {
+          align-items: self-start;
+        }
+        .footer-btn-content {
+          .footer-btn {
+            @media (max-width: 1199px) {
+              width: 135px;
+              height: 135px;
+              padding: 0px;
+            }
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            flex-wrap: wrap;
+            width: 165px;
+            height: 165px;
+            padding: 62px 42px;
+            border-radius: 50%;
+            color: $white;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%;
+            text-transform: uppercase;
+            background-color: var(--primary-color);
+            i {
+              line-height: 30%;
+            }
+          }
+        }
+        .footer-email {
+          display: flex;
+          flex-direction: column;
+          color: $white;
+          .email-short-title {
+            font-size: 18px;
+            line-height: 165%;
+          }
+          a {
+            font-size: 45px;
+            font-weight: 700;
+            line-height: 125%;
+            color: $white;
+          }
+        }
+      }
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 50px;
+      .about-company {
+        @media (min-width: 1199px) {
+          max-width: 522px;
+        }
+        .footer-logo {
+          max-width: 162px;
+          max-height: 47px;
+          margin-bottom: 25px;
+        }
+        .about-company-desp {
+          font-size: 20px;
+          line-height: 160%;
+          color: $white;
+          span {
+            color: $primary;
+            font-style: italic;
+            text-decoration-line: underline;
+          }
+        }
+      }
+      .address-phn {
+        color: $white;
+        max-width: 313px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .phn {
+          font-size: 35px;
+          font-weight: 600;
+          line-height: 130%;
+          color: $white;
+          i {
+            line-height: normal;
+          }
+        }
+        .address {
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+        }
+      }
+      .footer-list-content {
+        .footer-list-menu {
+          color: $white;
+          font-size: 18px;
+          line-height: 165%;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          min-width: 150px;
+          li {
+            transform: translateX(0px);
+            transition: transform 0.3s ease;
+            a {
+              color: $white;
+              font-weight: 400;
+            }
+            &:hover {
+              transform: translateX(10px);
+              a {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .copy-right-content {
+    border-top: 1px solid rgba($secondary, 0.9);
+    padding: 35px 0px;
+    .copy-right-social-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .copy-right-text {
+      font-size: 18px;
+      line-height: 165%;
+      color: $white;
+      font-weight: 400;
+      span {
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .ak-footer.style-1 {
+    .ak-footer-container {
+      .footer-cta {
+        .footer-cta-info {
+          .footer-cta-title {
+            font-size: 62px;
+          }
+          .footer-cta-title-two {
+            font-size: 62px;
+          }
+        }
+        .footer-btn-email {
+          .footer-btn-content {
+            .footer-btn {
+              width: 110px;
+              height: 110px;
+              font-size: 14px;
+            }
+          }
+          .footer-email {
+            a {
+              font-size: 32px;
+            }
+          }
+        }
+      }
+      .footer-content {
+        .about-company {
+          .about-company-desp {
+            font-size: 18px;
+          }
+        }
+        .address-phn {
+          .phn {
+            font-size: 32px;
+          }
+          .address {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .copy-right-content {
+      .ak-space-between {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .copy-right-text {
+        font-size: 16px;
+      }
+    }
+  }
+}

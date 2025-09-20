@@ -1,0 +1,102 @@
+/*--------------------------------------------------------------
+  17. Counter Funfact
+----------------------------------------------------------------*/
+.funfact-content {
+  display: flex;
+  & > * {
+    width: 24.4%;
+  }
+  &.type-2 {
+    & > * {
+      width: 25%;
+    }
+  }
+}
+
+.funfact-card {
+  &.style-1 {
+    width: 350px;
+    height: 350px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 350px;
+    border: 1px solid var(--border-color);
+    &.type-2 {
+      width: 100%;
+      height: auto;
+      border: 0;
+      border-radius: 0px;
+      .funfact-number {
+        -webkit-text-stroke: 0px var(--body-color);
+        text-shadow: none !important;
+      }
+    }
+    &.type-3 {
+      text-align: center;
+      .funfact-text {
+        font-size: 18px;
+        line-height: 165%;
+      }
+      .funfact-number {
+        color: var(--black-color);
+        font-size: 55px;
+        margin-top: 10px;
+      }
+    }
+    .funfact-number {
+      font-style: normal;
+      line-height: normal;
+      color: transparent;
+      font-size: 100px;
+      font-weight: 700;
+      font-family: var(--heading-font-family);
+      background-image: none;
+      text-shadow: -1px -1px 0 var(--black-color), 0px -1px 0 var(--black-color),
+        1px -1px 0 var(--black-color), 1px 0px 0 var(--black-color),
+        1px 1px 0 var(--black-color), 0px 1px 0 var(--black-color),
+        -1px 1px 0 var(--black-color), -1px 0 0 var(--black-color);
+      color: var(--white-color);
+      word-spacing: -32px;
+    }
+
+    .funfact-text {
+      font-size: 18px;
+      position: relative;
+    }
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .funfact-card.style-1 {
+    width: 300px;
+    height: 300px;
+    .funfact-number {
+      font-size: 75px;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .funfact-card.style-1 {
+    width: 250px;
+    height: 250px;
+    .funfact-number {
+      font-size: 55px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .funfact-content {
+    justify-content: center;
+    flex-wrap: wrap;
+    &.funfact-gap {
+      gap: 50px;
+    }
+    & > * {
+      width: 250px !important;
+    }
+  }
+}

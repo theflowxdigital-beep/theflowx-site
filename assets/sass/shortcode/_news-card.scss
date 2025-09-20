@@ -1,0 +1,142 @@
+/*--------------------------------------------------------------
+20. Team
+----------------------------------------------------------------*/
+.news-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow: hidden;
+  .news-img-content {
+    position: relative;
+    overflow: hidden;
+    max-height: 350px;
+    width: 100%;
+    .news-img-top {
+      position: relative;
+      transition: transform 500ms;
+      transform: perspective(0) rotateX(0) rotateY(0) scaleX(1) scaleY(1);
+      transform-origin: center center;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .news-body {
+    flex: 1 1 auto;
+    margin: 45px 0px 0px 20px;
+    .news-title {
+      margin-bottom: 18px;
+    }
+    .news-title,
+    .news-text {
+      transition: all 0.3s;
+      line-height: 165%;
+    }
+    .news-text {
+      font-size: 16px;
+      margin-bottom: 48px;
+    }
+  }
+  &:hover {
+    .news-body {
+      .news-title {
+        color: $primary;
+      }
+    }
+    .news-img-content {
+      .news-img-top {
+        transform: perspective(600px) rotateX(0.06deg) rotateY(0) scaleX(1.1)
+          scaleY(1.1);
+      }
+    }
+  }
+}
+.dark {
+  .news-swiper-controller {
+    .news-logs-navigation {
+      .news-logs-button-prev,
+      .news-logs-button-next {
+        border: 1px solid $white;
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}
+.news-swiper-controller {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .news-logs-scrollbar {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    position: absolute;
+    top: 50%;
+  }
+  .news-logs-navigation {
+    display: flex;
+    gap: 25px;
+    flex-shrink: 0;
+    z-index: 111;
+    background-color: var(--white-color);
+    transition: all 0.5s;
+    .news-logs-button-prev,
+    .news-logs-button-next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      svg {
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    .news-logs-button-prev {
+      &:hover {
+        border: 1px solid var(--primary-color);
+        svg {
+          margin-right: 10px;
+          path {
+            fill: var(--primary-color);
+          }
+        }
+      }
+    }
+    .news-logs-button-next {
+      &:hover {
+        border: 1px solid var(--primary-color);
+        svg {
+          margin-left: 10px;
+          path {
+            fill: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news-card {
+    flex: 1 1 100%;
+    margin: 45px 0px 0px 0px;
+    .news-body {
+      .news-text {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

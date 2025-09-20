@@ -1,0 +1,135 @@
+/*--------------------------------------------------------------
+  24. Cta
+----------------------------------------------------------------*/
+
+.dark {
+  .services-details-cta {
+    background-color: $primary;
+    &-title {
+      .highlight {
+        color: $black;
+      }
+    }
+    .services-bg-start {
+      opacity: 0.1;
+    }
+    .dot-top-left,
+    .dot-top-right,
+    .dot-bottom-left,
+    .dot-bottom-right {
+      background-color: $white;
+    }
+  }
+}
+
+.services-details-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  flex-direction: column;
+  height: 350px;
+  position: relative;
+  background-color: var(--gray-bg);
+  margin-bottom: 100px;
+  .dot-top-left,
+  .dot-top-right,
+  .dot-bottom-left,
+  .dot-bottom-right {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: $primary;
+    z-index: 2;
+  }
+  .dot-top-left {
+    top: -4px;
+    left: -4px;
+  }
+  .dot-top-right {
+    top: -4px;
+    right: -4px;
+  }
+  .dot-bottom-left {
+    bottom: -4px;
+    left: -4px;
+  }
+  .dot-bottom-right {
+    bottom: -4px;
+    right: -4px;
+  }
+  .services-bg-start {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+  &-content {
+    max-width: 740px;
+    width: 100%;
+  }
+  &-wapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    width: 100%;
+  }
+  &-title {
+    font-size: 55px;
+    line-height: 120%;
+    .highlight {
+      text-decoration: underline;
+      color: $primary;
+      font-weight: 400;
+      font-style: italic;
+      font-family: var(--secondary-font-family);
+      position: relative;
+      &.text-underlines {
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0%;
+          bottom: 2px;
+          width: 100%;
+          height: 2px;
+          background-color: $primary;
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+          opacity: 0;
+        }
+
+        &.active {
+          &::after {
+            transition-delay: 1.2s;
+            transform: scaleX(1);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &-btn {
+    position: absolute;
+    bottom: -35%;
+    padding: 15px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    .circle-btn {
+      border: 1px solid var(--black-color);
+      color: var(--black-color);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services-details-cta {
+    &-title {
+      font-size: 36px;
+    }
+  }
+}

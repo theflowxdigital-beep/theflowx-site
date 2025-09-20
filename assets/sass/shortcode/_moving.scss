@@ -1,0 +1,182 @@
+/*--------------------------------------------------------------
+15. Moving Text
+----------------------------------------------------------------*/
+
+$text-gradient-default: linear-gradient(90deg, #ff4500, #000000, #ff4500);
+$text-gradient-dark: linear-gradient(90deg, #ff4500, #ffffff, #ff4500);
+
+.slideing-text-content {
+  position: relative;
+  height: 270px;
+  left: -89px;
+
+  .slideing-text {
+    position: absolute;
+    font-weight: 700;
+    font-size: 100px;
+    letter-spacing: 0;
+    line-height: 120px;
+    white-space: nowrap;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .text-color-one {
+    top: 0;
+    left: 0;
+    text-shadow: -1px -1px 0 #ff4a23, 0px -1px 0 #ff4a23, 1px -1px 0 #ff4a23,
+      1px 0px 0 #ff4a23, 1px 1px 0 #ff4a23, 0px 1px 0 #ff4a23,
+      -1px 1px 0 #ff4a23, -1px 0 0 #ff4a23;
+    color: #ff4a23;
+  }
+  .text-color-two {
+    top: 149px;
+    left: -150px;
+    background-image: none;
+    text-shadow: -1px -1px 0 #01010f, 0px -1px 0 #01010f, 1px -1px 0 #01010f,
+      1px 0px 0 #01010f, 1px 1px 0 #01010f, 0px 1px 0 #01010f,
+      -1px 1px 0 #01010f, -1px 0 0 #01010f;
+    color: #fff;
+  }
+
+  &.style2 {
+    .text-color-three,
+    .text-color-two {
+      background-image: none;
+      text-shadow: -1px -1px 0 #01010f, 0px -1px 0 #01010f, 1px -1px 0 #01010f,
+        1px 0px 0 #01010f, 1px 1px 0 #01010f, 0px 1px 0 #01010f,
+        -1px 1px 0 #01010f, -1px 0 0 #01010f;
+      color: #fff;
+    }
+  }
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@mixin text-gradient($gradient) {
+  transform: translateX(0px);
+
+  font-weight: bold;
+  background: $gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 55px;
+  line-height: 120%;
+  -webkit-text-fill-color: transparent;
+  margin-right: 1rem;
+}
+
+@mixin background-gradient {
+  padding: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  background: rgb(255, 74, 35);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 74, 35, 0.0760679271708683) 0%,
+    rgba(255, 74, 35, 0.33657212885154064) 50%,
+    rgba(255, 74, 35, 0.08167016806722693) 100%
+  );
+}
+
+.background-gradient {
+  @include background-gradient;
+}
+
+.text-container {
+  display: inline-flex;
+  animation: scrollText 10s linear infinite;
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.text-gradient {
+  @include text-gradient($text-gradient-default);
+}
+
+.dark .text-gradient {
+  @include text-gradient($text-gradient-dark);
+}
+
+.text-moving-container.style2 {
+  position: relative;
+  .text-moving-bg {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      var(--white-color) 0%,
+      rgba(255, 74, 35, 0) 50%,
+      var(--white-color) 100%
+    );
+    z-index: 1;
+  }
+}
+.text-moving-info {
+  display: inline-flex;
+  animation: scrollText 10s linear infinite;
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  .text-moving.style2 {
+    transform: translateX(0px);
+    font-weight: bold;
+    background: $primary;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 100px;
+    line-height: 120%;
+    -webkit-text-fill-color: transparent;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .slideing-text-content {
+    height: 200px;
+    .slideing-text {
+      font-size: 75px;
+    }
+    .text-color-one {
+      top: 0;
+      left: -337px;
+    }
+    .text-color-two {
+      top: 100px;
+      left: -244px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .slideing-text-content {
+    height: 155px;
+    .slideing-text {
+      font-size: 52px;
+    }
+    .text-color-one {
+      top: 0;
+      left: -337px;
+    }
+    .text-color-two {
+      top: 68px;
+      left: -244px;
+    }
+  }
+  .text-moving-container.style2 {
+    position: relative;
+    .text-moving-bg {
+      display: none;
+    }
+  }
+}

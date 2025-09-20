@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------
+1. Basic Color Variable
+----------------------------------------------------------------*/
+
+$white: #ffffff;
+$black: #101010;
+$solidblack: #000000;
+$primary: #ff4a23;
+$secondary: #353535;
+$border: #ececec;
+$graybg: #f1f1f1;
+$darktextcolor: #c1c1c1;
+
+:root {
+  --body-font-family: "Epilogue", sans-serif;
+  --heading-font-family: "Epilogue", sans-serif;
+  --secondary-font-family: "Instrument Serif";
+  --body-color: #353535;
+  --body-bg-color: #ffffff;
+  --heading-color: #101010;
+  --border-color: #ececec;
+  --white-color: #ffffff;
+  --black-color: #101010;
+  --primary-color: #ff4a23;
+  --secondary-color: #353535;
+  --gray-bg: #f1f1f1;
+}
+
+.dark {
+  --body-bg-color: #101010;
+  --heading-color: #ffffff;
+  --body-color: #c1c1c1;
+  --gray-bg: #000000;
+  --black-color: #ffffff;
+  --white-color: #101010;
+  --secondary-color: #c1c1c1;
+  --border-color: #353535;
+}
