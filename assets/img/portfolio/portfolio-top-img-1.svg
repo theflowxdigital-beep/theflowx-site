@@ -1,0 +1,37 @@
+
+<svg width="556" height="551" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(45, 55, 72);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(15, 25, 42);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#grad)"/>
+  
+  <!-- Border -->
+  <rect x="20" y="20" width="516" height="511" 
+        fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+        
+  <!-- Icon/Symbol -->
+  <circle cx="278" cy="215.5" r="30" 
+          fill="none" stroke="#ffffff" stroke-width="3" opacity="0.4"/>
+  <circle cx="278" cy="215.5" r="15" 
+          fill="#ffffff" opacity="0.2"/>
+          
+  <!-- Title -->
+  <text x="278" y="285.5" 
+        font-family="Arial, sans-serif" font-size="32" font-weight="bold" 
+        fill="#ffffff" text-anchor="middle">SEO Strategy</text>
+        
+  <!-- Subtitle -->
+  <text x="278" y="325.5" 
+        font-family="Arial, sans-serif" font-size="18" 
+        fill="#ffffff" text-anchor="middle" opacity="0.8">Organic Growth Campaign</text>
+        
+  <!-- FlowX branding -->
+  <text x="536" y="531" 
+        font-family="Arial, sans-serif" font-size="12" 
+        fill="#ffffff" text-anchor="end" opacity="0.6">FlowX</text>
+</svg>

@@ -16,7 +16,15 @@
     "deploy:staging": "echo '🧪 Ready for staging deployment'",
     "deploy:production": "./deploy.sh"
   },
-  "keywords": ["theflowx", "digital-marketing", "ai", "website"],
+  "keywords": [
+    "theflowx",
+    "digital-marketing",
+    "ai",
+    "website"
+  ],
   "author": "theFlowX Team",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@playwright/test": "^1.55.0"
+  }
 }

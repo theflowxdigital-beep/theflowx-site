@@ -4805,7 +4805,7 @@ kbd {
 .digital-agencye-hero.style-1 .hero-right-column .image-box .hero-right-image {
   width: 100%;
   height: 100%;
-  background-color: var(--white-color);
+  background: url('../img/hero/hero-bg.svg') center center/cover no-repeat;
   position: absolute;
   bottom: 0;
 }
